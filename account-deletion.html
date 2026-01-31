@@ -4,76 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Deletion - TedGift</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #00D2D3;
+            --primary-dark: #00a8a9;
+            --secondary: #FF9F43;
+            --dark: #2d3436;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            background-color: #f0f2f5;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(178,63%,65%,0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(34,100%,73%,0.2) 0px, transparent 50%);
+            color: var(--dark);
+        }
+
+        nav {
+            padding: 20px 0;
+            background-color: transparent;
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
         }
-        .nav-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #3498db;
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
             text-decoration: none;
-            font-weight: 500;
         }
-        .nav-link:hover {
-            text-decoration: underline;
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
         h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
+        
         h2 {
-            color: #34495e;
+            color: var(--primary-dark);
             margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #636e72;
+        }
+        
         .steps {
-            background: #ecf0f1;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #e0fbfb 0%, #fff5e6 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 2px solid rgba(0,210,211,0.2);
         }
-        .steps ol {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .steps li {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .data-section {
-            background: #fff;
-            border-left: 4px solid #3498db;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        .data-section h3 {
-            color: #2c3e50;
+        
+        .steps h2 {
             margin-top: 0;
         }
-        .warning {
-            background: #ffe6e6;
-            border-left: 4px solid #e74c3c;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 3px;
+        
+        .steps ol {
+            margin: 15px 0 0 0;
+            padding-left: 25px;
         }
+        
+        .steps li {
+            margin: 15px 0;
+            font-size: 1.05rem;
+            color: var(--dark);
+        }
+        
+        .steps li strong {
+            color: var(--primary-dark);
+        }
+        
+        .data-section {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .data-section h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+        
+        .data-section ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        .data-section li {
+            margin: 8px 0;
+            color: #636e72;
+        }
+        
+        .warning {
+            background: #FFEAA7;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .warning strong {
+            color: #d35400;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
         .contact {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 25px;
+            border-radius: 15px;
             margin-top: 30px;
+            color: white;
+        }
+        
+        .contact p {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .contact strong {
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+            
+            .nav-logo img {
+                height: 32px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-link">← Back to Home</a>
-    <h1>TedGift Account Deletion</h1>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/1tedgift_icon.png" alt="TedGift Logo">
+                <span>TedGift</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-card">
+            <h1>Account Deletion</h1>
 
     <p>To delete your TedGift account and all associated data, follow these simple steps:</p>
 
@@ -113,15 +275,16 @@
         <p><strong>Immediate</strong> – Your account is deleted instantly</p>
     </div>
 
-    <h2>Need Help?</h2>
-    <div class="contact">
-        <p>If you need assistance or have questions about account deletion, please contact us:</p>
-        <p><strong>Email:</strong> nas91dev@gmail.com</p>
+            <h2>Need Help?</h2>
+            <div class="contact">
+                <p>If you need assistance or have questions about account deletion, please contact us:</p>
+                <p><strong>Email:</strong> nas91dev@gmail.com</p>
+            </div>
+        </div>
     </div>
 
-    <hr style="margin-top: 40px; border: none; border-top: 1px solid #ddd;">
-    <p style="text-align: center; color: #7f8c8d; font-size: 14px;">
-        © 2026 TedGift. All rights reserved.
-    </p>
+    <footer>
+        <p>© 2026 TedGift. All rights reserved.</p>
+    </footer>
 </body>
 </html>
