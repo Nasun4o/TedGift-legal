@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TedGIFT - Support</title>
+    <title>TedGift - Support</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #00D2D3;
+            --primary-dark: #00a8a9;
+            --secondary: #FF9F43;
+            --dark: #2d3436;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,37 +25,59 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #f0f2f5;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(178,63%,65%,0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(34,100%,73%,0.2) 0px, transparent 50%);
+            color: var(--dark);
             min-height: 100vh;
-            padding: 20px;
+        }
+        
+        nav {
+            padding: 20px 0;
+            background-color: transparent;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        .nav-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            text-decoration: underline;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
         
         h1 {
-            color: #667eea;
+            color: var(--primary-dark);
             margin-bottom: 10px;
             font-size: 2.5em;
         }
@@ -64,7 +99,7 @@
         }
         
         .contact-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 30px;
             border-radius: 12px;
@@ -80,7 +115,7 @@
         .email-button {
             display: inline-block;
             background: white;
-            color: #667eea;
+            color: var(--primary-dark);
             padding: 15px 40px;
             border-radius: 8px;
             text-decoration: none;
@@ -103,7 +138,7 @@
         }
         
         .faq h3 {
-            color: #667eea;
+            color: var(--primary-dark);
             margin-bottom: 10px;
         }
         
@@ -144,11 +179,26 @@
                 font-size: 1em;
             }
         }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="nav-link">← Back to Home</a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/1tedgift_icon.png" alt="TedGift Logo">
+                <span>TedGift</span>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="page-container">
+        <div class="container">
         <h1>🎁 TedGIFT Support</h1>
         <p class="subtitle">We're here to help you find the perfect gifts!</p>
         
@@ -224,6 +274,7 @@
                 <a href="https://tedgift.com/privacy-policy.html" style="color: #667eea; text-decoration: none;">Privacy Policy</a> • 
                 <a href="https://tedgift.com/terms-of-service.html" style="color: #667eea; text-decoration: none;">Terms of Service</a>
             </p>
+        </div>
         </div>
     </div>
 </body>

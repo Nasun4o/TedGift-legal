@@ -4,48 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TedGift</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #00D2D3;
+            --primary-dark: #00a8a9;
+            --secondary: #FF9F43;
+            --dark: #2d3436;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            background-color: #f0f2f5;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(178,63%,65%,0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(34,100%,73%,0.2) 0px, transparent 50%);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+        
+        nav {
+            padding: 20px 0;
+            background-color: transparent;
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
         }
-        .nav-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #3498db;
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
             text-decoration: none;
-            font-weight: 500;
         }
-        .nav-link:hover {
-            text-decoration: underline;
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
         h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
+        
         h2 {
-            color: #34495e;
+            color: var(--dark);
             margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
+        
         .last-updated {
-            color: #7f8c8d;
+            color: #636e72;
             font-style: italic;
+            margin-bottom: 30px;
         }
+        
         .contact {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
+            background: #e0fbfb;
+            padding: 20px;
+            border-radius: 12px;
             margin-top: 30px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-link">? Back to Home</a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/1tedgift_icon.png" alt="TedGift Logo">
+                <span>TedGift</span>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content-card">
     <h1>Privacy Policy for TedGift</h1>
     <p class="last-updated">Last Updated: January 8, 2026</p>
 
@@ -206,7 +291,6 @@
     <div class="contact">
         <p>If you have questions or concerns about this Privacy Policy or your data, please contact us at:</p>
         <p><strong>Email:</strong> nas91dev@gmail.com</p>
-        <p><strong>App:</strong> Settings ? Support</p>
     </div>
 
     <hr style="margin-top: 40px; border: none; border-top: 1px solid #ddd;">
